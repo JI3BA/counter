@@ -1,0 +1,52 @@
+.counter{
+    width: 500px;
+    height: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid aqua;
+    display: flex;
+    flex-direction: column;
+}
+
+.screen{
+    border-radius: 5px;
+    border: 2px solid aqua;
+    height: 75%;
+}
+
+.screen__count{
+    font-size: 102px;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons{
+    margin-top: 10px;
+    height: 25%;
+    border-radius: 5px;
+    border: 2px solid aqua;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.settings{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.setting__name{
+    background-color: transparent;
+    color: #ffffff;
+    position: absolute;
+    top: -35px;
+    height: 40px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+}
