@@ -1,0 +1,27 @@
+.setting{
+    position: relative;
+    border-radius: 5px;
+    border: 2px solid aqua;
+    max-width: 80%;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.setting__input{
+    width: 30%;
+    border: 2px solid transparent;
+    background-color: transparent;
+    outline: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 28px;
+    text-align: center;
+}
+
+.setting__input::-webkit-outer-spin-button,
+.setting__input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
