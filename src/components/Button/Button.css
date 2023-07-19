@@ -1,0 +1,48 @@
+.button{
+    font-weight: 600;
+    font-size: 28px;
+    font-style: italic;
+    color: #ffffff;
+    width: 40%;
+    height: 80%;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid aqua;
+    cursor: pointer;
+    transform: scale(1);
+    transition: border .3s, transform .3s;
+    margin: 0 5px;
+}
+
+.button:hover{
+    border: 2px solid blueviolet;
+}
+
+.button:active{
+    transform: scale(.98);
+}
+
+.setting__button{
+    width: 40%;
+    background-color: transparent;
+    border: 2px solid transparent;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 46px;
+    cursor: pointer;
+    transition: background-color .5s;
+}
+
+.setting__button:hover{
+    background-color: aqua;
+}
+
+.setting__button:active{
+    background-color: #00c4ff;
+}
+
+.button:disabled{
+    opacity: .5;
+    color: red;
+    border: 2px solid red;
+}
