@@ -6,7 +6,7 @@ import {Input} from "../Input/Input";
 export const Counter = () => {
     const [count, setCount] = useState<number>(0)
     const [startValue, setStartValue] = useState<string>('0')
-    const [maxValue, setMaxValue] = useState<string>(startValue)
+    const [maxValue, setMaxValue] = useState<string>('5')
     const [isSettings, setIsSettings] = useState<boolean>(false)
 
     const getNewCount = () => {
@@ -15,10 +15,23 @@ export const Counter = () => {
     }
 
     useEffect(() => {
-        if(Number(startValue) < 0 || Number(maxValue) < 0){
-
-        }
+        localStorage.setItem('start', startValue)
+        localStorage.setItem('max', maxValue)
     }, [startValue, maxValue])
+
+    useEffect(() => {
+        const localStartValue = localStorage.getItem('start')
+        const localMaxValue = localStorage.getItem('max')
+        if(localStartValue){
+            const start = JSON.parse(localStartValue)
+            setStartValue(start)
+            setCount(Number(start))
+        }
+        if(localMaxValue){
+            const max = JSON.parse(localMaxValue)
+            setMaxValue(max)
+        }
+    }, [])
 
     return(
         <div className='counter'>
