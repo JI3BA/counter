@@ -15,11 +15,6 @@ export const Counter = () => {
     }
 
     useEffect(() => {
-        localStorage.setItem('start', startValue)
-        localStorage.setItem('max', maxValue)
-    }, [startValue, maxValue])
-
-    useEffect(() => {
         const localStartValue = localStorage.getItem('start')
         const localMaxValue = localStorage.getItem('max')
         if(localStartValue){
@@ -32,6 +27,11 @@ export const Counter = () => {
             setMaxValue(max)
         }
     }, [])
+
+    useEffect(() => {
+        localStorage.setItem('start', startValue)
+        localStorage.setItem('max', maxValue)
+    }, [startValue, maxValue])
 
     return(
         <div className='counter'>
