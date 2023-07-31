@@ -1,6 +1,33 @@
 .App{
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
+}
+
+.container{
+    width: 1440px;
+    height: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+}
+
+.counter-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.counter__title{
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 40px;
+    height: 40px;
+    background-color: transparent;
 }
