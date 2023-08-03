@@ -11,7 +11,7 @@ const initialState: CounterState = {
     counter: 0,
     isSettings: false,
     minValue: 0,
-    maxValue: 0
+    maxValue: 3
 }
 
 export const counterSlice = createSlice({
@@ -22,7 +22,7 @@ export const counterSlice = createSlice({
             state.counter += 1
         },
         reset: state => {
-            state.counter = 0
+            state.counter = state.minValue
         },
         isSetting: state => {
             state.isSettings = !state.isSettings
@@ -37,13 +37,16 @@ export const counterSlice = createSlice({
             state.maxValue += 1
         },
         decreaseMaxValue: state => {
-            state.maxValue += 1
+            state.maxValue -= 1
         },
         changeMinValue: (state, action: PayloadAction<string>) => {
             state.minValue = Number(action.payload)
         },
         changeMaxValue: (state, action: PayloadAction<string>) => {
             state.maxValue = Number(action.payload)
+        },
+        changeCountMinValue: state => {
+            state.counter = state.minValue
         }
     }
 })
