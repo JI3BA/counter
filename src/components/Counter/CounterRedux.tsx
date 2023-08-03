@@ -6,10 +6,10 @@ import {Input} from "../Input/Input";
 import {ChangeEvent} from "react";
 
 export const CounterRedux = () => {
-    const count = useAppSelector(state => state.counterSlice.counter)
-    const isSettings = useAppSelector(state => state.counterSlice.isSettings)
-    const maxValue = useAppSelector(state => state.counterSlice.maxValue)
-    const minValue = useAppSelector(state => state.counterSlice.minValue)
+    const count = useAppSelector(state => state.counter.counter)
+    const isSettings = useAppSelector(state => state.counter.isSettings)
+    const maxValue = useAppSelector(state => state.counter.maxValue)
+    const minValue = useAppSelector(state => state.counter.minValue)
     const dispatch = useAppDispatch()
     const {
         increment,
@@ -20,7 +20,8 @@ export const CounterRedux = () => {
         changeMaxValue,
         changeMinValue,
         decreaseMinValue,
-        increaseMinValue } = counterSlice.actions
+        increaseMinValue,
+        changeCountMinValue} = counterSlice.actions
 
     return(
         <div className='counter'>
@@ -53,10 +54,13 @@ export const CounterRedux = () => {
                     ?
                     <>
                         <Button className="button" disabled={count === maxValue} onClick={() => dispatch(increment())}>inc</Button>
-                        <Button className="button" disabled={count > minValue}onClick={() => dispatch(reset())}>reset</Button>
+                        <Button className="button" disabled={count === minValue} onClick={() => dispatch(reset())}>reset</Button>
                         <Button className="button" onClick={() => dispatch(isSetting())}>settings</Button>
                     </>
-                    : <Button className="button" onClick={() => dispatch(isSetting())}>set</Button>
+                    : <Button className="button" disabled={minValue >= maxValue} onClick={() => {
+                        dispatch(isSetting())
+                        dispatch(changeCountMinValue())
+                    }}>set</Button>
                 }
             </div>
         </div>
