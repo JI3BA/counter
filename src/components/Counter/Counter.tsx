@@ -67,7 +67,7 @@ export const Counter = () => {
                         <Button className="button" disabled={count === Number(startValue)} onClick={() => setCount(Number(startValue))}>reset</Button>
                         <Button className="button" onClick={() => setIsSettings(true)}>settings</Button>
                     </>
-                    : <Button className="button" disabled={Number(startValue) >= Number(maxValue) || Number(startValue) < 0 || Number(maxValue) < 0} onClick={getNewCount}>set</Button>
+                    : <Button className="button" disabled={Number(startValue) >= Number(maxValue)} onClick={getNewCount}>set</Button>
                 }
             </div>
         </div>
