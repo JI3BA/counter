@@ -10,12 +10,14 @@
     border: 2px solid aqua;
     cursor: pointer;
     transform: scale(1);
-    transition: border .3s, transform .3s;
+    box-shadow: 0 0 0 blueviolet;
+    transition: border .3s, transform .3s, box-shadow .3s;
     margin: 0 5px;
 }
 
 .button:hover{
     border: 2px solid blueviolet;
+    box-shadow: 0 0 10px 2px blueviolet;
 }
 
 .button:active{
@@ -45,4 +47,6 @@
     opacity: .5;
     color: red;
     border: 2px solid red;
+    cursor: default;
+    box-shadow: none;
 }
