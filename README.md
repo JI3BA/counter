@@ -1,4 +1,4 @@
-#Counter
+# Counter
 
 This project is a simple counter application developed using React, TypeScript, Redux Toolkit, and Redux Persist. The project implements two variations of the counter: one using hooks (useState, useEffect), and the other using Redux Toolkit with Slice and Redux Persist for storing values in Local Storage.
 
